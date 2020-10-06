@@ -1,7 +1,7 @@
 
 # TWITTER TOPLINKS WEB APPLICATION 
 
-The project aims at creating a web application with the following functionalities -
+The project aims at creating a web application with ``Django Framework`` with the following functionalities -
 * Let the user login with Twitter.
 * After authenticating, fetch tweets containing urls from user's timeline (friends + user's tweets) from past 7 days and displays them.
 * Display most shared domains from user's timeline.

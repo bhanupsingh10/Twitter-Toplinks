@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron" style="margin-top: 20px;border-radius: 10px;background-color: azure;">
+        <h1 class="text-center" class="display-1">Welcome to {{ request.session.user }}'s Timeline</h1>
+        <h1 class="text-center" class="display-4">Of past 7 days</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card bg-light mb-3" style="max-width: 30rem;border-radius: 10px;">
+                <div class="card-header">TOP DOMAINS SHARED</div>
+                <div class="card-body">
+                    {% for link in most_links %}
+                        <p class="card-text">{{ link.tweet_links }} => {{ link.domain_count }}</p>
+                    {% endfor %}
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card bg-light mb-3" style="max-width: 30rem;">
+                <div class="card-header">TOP USERS THAT HAVE SHARED MOST LINKS</div>
+                <div class="card-body">
+                    {% for author in most_authors %}
+                        <p class="card-text">@{{ author.tweet_author__person }} => {{ author.domain_count }}</p>
+                    {% endfor %}                    
+                </div>
+              </div>
+        </div>
+      </div>   
+
+    {% for tweet in embed_tweets %}
+        <div style = "text-align: -webkit-center;text-align: -moz-center;">
+            {{ tweet|safe }}
+        </div>
+    {% endfor %}
+    
+
+
+{% endblock content %}

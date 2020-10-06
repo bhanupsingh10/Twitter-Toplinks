@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{% block title %}Twitter Toplinks{% endblock %}</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    
+	<link href="{% static 'css/home.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+
+	  <div class="wrapper">
+		<h1 id="text">
+		  <span>T</span>
+		  <span>W</span>
+		  <span>I</span>
+		  <span>T</span>
+		  <span>T</span>
+		  <span>E</span>
+		  <span>R</span>
+		  <span></span>
+		  <span>T</span>
+		  <span>O</span>
+		  <span>P</span>
+		  <span>L</span>
+		  <span>I</span>
+		  <span>N</span>
+		  <span>K</span>
+		  <span>S</span>
+		</h1>     
+		<button id="toggle_btn"></button>
+
+		<div class="container">
+			<a style="text-decoration: none;" href="{% url 'tweets:login' %}">Let's get started!</a>
+		</div>
+
+
+    <!-- SCRIPTS -->
+	<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+
+</body>
+
+</html>
